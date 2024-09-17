@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
@@ -139,27 +139,16 @@ body.dark-mode #hero p {
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-#sobre h2 {
+#sobre h2, #projetos h2, #contato h2 {
     font-size: 36px;
     color: #1c5d40;
     margin-bottom: 20px;
 }
 
-#sobre p {
+#sobre p, #contato p {
     font-size: 18px;
     color: #555;
     line-height: 1.8;
-}
-
-#contato h2 {
-    font-size: 36px;
-    color: #1c5d40;
-    margin-bottom: 20px;
-}
-
-#contato p {
-    font-size: 18px;
-    color: #555;
 }
 
 #contato ul {
@@ -181,6 +170,40 @@ body.dark-mode #hero p {
 
 #contato ul li a:hover {
     color: #0d3d26;
+}
+
+.btn-download {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1c5d40;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: #0d3d26;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #348b64;
+}
+
+#hero {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 footer {

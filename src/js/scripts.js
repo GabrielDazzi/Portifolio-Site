@@ -21,3 +21,20 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach(section => {
     observer.observe(section);
 });
+
+// Inicializar o carrossel (exemplo usando Swiper)
+document.addEventListener('DOMContentLoaded', () => {
+    var swiper = new Swiper('.gallery', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+});
