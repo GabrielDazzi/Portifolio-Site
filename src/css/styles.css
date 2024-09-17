@@ -188,17 +188,6 @@ body.dark-mode #hero p {
     background-color: #0d3d26;
 }
 
-.social-links a {
-    margin: 0 10px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #348b64;
-}
 
 #hero {
     background-attachment: fixed;
