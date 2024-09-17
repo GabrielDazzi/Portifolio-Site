@@ -2,6 +2,13 @@
 const toggleThemeButton = document.getElementById('toggle-theme');
 toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
+
+    // Verifica se o tema escuro está ativado e troca o emoji
+    if (document.body.classList.contains('dark-mode')) {
+        toggleThemeButton.textContent = '☀️';
+    } else {
+        toggleThemeButton.textContent = '🌙';
+    }
 });
 
 // Animação ao carregar seções
