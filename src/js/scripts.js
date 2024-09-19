@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const preferredTheme = localStorage.getItem('theme') || 'light';
     if (preferredTheme === 'dark') {
         body.classList.add('dark-mode');
-        toggleThemeButton.textContent = '🌟'; 
+        toggleThemeButton.textContent = '🌙'; 
     } else {
         body.classList.remove('dark-mode');
         toggleThemeButton.textContent = '☀️';
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleThemeButton.addEventListener('click', function () {
         const isDarkMode = body.classList.toggle('dark-mode');
         localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-        toggleThemeButton.textContent = isDarkMode ? '🌟' : '☀️';
+        toggleThemeButton.textContent = isDarkMode ? '🌙' : '☀️';
     });
 
     // Observador de interseção
