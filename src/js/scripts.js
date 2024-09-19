@@ -1,47 +1,38 @@
-// Alternar modo escuro
-const toggleThemeButton = document.getElementById('toggle-theme');
-toggleThemeButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleThemeButton = document.getElementById('toggle-theme');
+    const body = document.body;
 
-    // Verifica se o tema escuro está ativado e troca o emoji
-    if (document.body.classList.contains('dark-mode')) {
-        toggleThemeButton.textContent = '☀️';
-    } else {
-        toggleThemeButton.textContent = '🌙';
-    }
-});
-
-// Animação ao carregar seções
-const sections = document.querySelectorAll('.container');
-const options = {
-    threshold: 0.5
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+    toggleThemeButton.addEventListener('click', function () {
+        body.classList.toggle('dark-mode');
+        toggleThemeButton.textContent = body.classList.contains('dark-mode') ? '🌟' : '☀️';
     });
-}, options);
 
-sections.forEach(section => {
-    observer.observe(section);
-});
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
 
-// Inicializar o carrossel (exemplo usando Swiper)
-document.addEventListener('DOMContentLoaded', () => {
-    var swiper = new Swiper('.gallery', {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+    const containers = document.querySelectorAll('.container');
+    containers.forEach(container => {
+        observer.observe(container);
+    });
+
+    // Smooth scrolling
+    const navLinks = document.querySelectorAll('#topbar nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.querySelector('#topbar').offsetHeight, 
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 });
