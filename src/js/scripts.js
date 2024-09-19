@@ -2,11 +2,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggleThemeButton = document.getElementById('toggle-theme');
     const body = document.body;
 
+    // Verifica a preferência de tema do usuário e define o tema padrão
+    const preferredTheme = localStorage.getItem('theme') || 'light';
+    if (preferredTheme === 'dark') {
+        body.classList.add('dark-mode');
+        toggleThemeButton.textContent = '🌟'; 
+    } else {
+        body.classList.remove('dark-mode');
+        toggleThemeButton.textContent = '☀️';
+    }
+
+    // Alterna o tema ao clicar no botão
     toggleThemeButton.addEventListener('click', function () {
-        body.classList.toggle('dark-mode');
-        toggleThemeButton.textContent = body.classList.contains('dark-mode') ? '🌟' : '☀️';
+        const isDarkMode = body.classList.toggle('dark-mode');
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        toggleThemeButton.textContent = isDarkMode ? '🌟' : '☀️';
     });
 
+    // Observador de interseção
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -20,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(container);
     });
 
-    // Smooth scrolling
+    // Rolagem suave
     const navLinks = document.querySelectorAll('#topbar nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
