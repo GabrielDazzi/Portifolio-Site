@@ -5,11 +5,28 @@ body {
     background-color: #ffffff;
     color: #333333;
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow: -moz-scrollbars-none; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
 }
 
 html {
     scroll-behavior: smooth;
 }
+.logo {
+    height: auto;
+    max-height: 20px;
+    vertical-align: middle;
+}
+
+&::-webkit-scrollbar {
+    display: none;
+  }
+
+::selection {
+    background-color: #1c5d40;
+    color: #FFFFFF;
+  }  
 
 h1, h2, h3, p, a {
     margin: 0;
@@ -28,7 +45,6 @@ strong {
     width: auto;
     border-radius: 4px;
 }
-
 #topbar {
     background: transparent;
     position: fixed;
@@ -44,11 +60,10 @@ strong {
     z-index: 1000;
 }
 
-/* Efeito fosco para a topbar ao rolar a página */
 #topbar.frosted {
-    background-color: rgba(255, 255, 255, 0.9); /* Cor branca com 90% de opacidade */
-    backdrop-filter: blur(10px); /* Adiciona um desfoque ao fundo */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar a topbar */
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #topbar nav a {
@@ -66,9 +81,12 @@ strong {
     padding: 5px 10px;
     cursor: pointer;
     color: #1c5d40;
+    margin-left: auto;
+    margin-right: 45px;
     font-size: 14px;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.8s ease;
 }
+
 
 #toggle-theme:active {
     transform: rotate(360deg) scale(1.05);
@@ -284,15 +302,6 @@ body.dark-mode .project {
 }
 
 @media (max-width: 768px) {
-        #topbar {
-        padding: 15px 10px;
-        justify-content: space-between;
-    }
-
-    #topbar #toggle-theme {
-        margin-left: auto;
-    }
-    
     #projetos {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 15px;
@@ -323,15 +332,6 @@ body.dark-mode .project {
 }
 
 @media (max-width: 480px) {
-    #topbar {
-        padding: 15px 10px;
-        justify-content: space-between;
-    }
-
-    #topbar #toggle-theme {
-        margin-left: auto;
-    }
-
     #projetos {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 10px;

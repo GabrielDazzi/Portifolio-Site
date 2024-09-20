@@ -75,3 +75,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 200); // Ajuste o tempo conforme necessário
     });
 });
+
