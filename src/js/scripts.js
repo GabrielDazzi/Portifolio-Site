@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const hero = document.getElementById('hero');
     let isScrolling;
 
+    
     // Verifica a preferência de tema do usuário e define o tema padrão
     const preferredTheme = localStorage.getItem('theme') || 'light';
     if (preferredTheme === 'dark') {
