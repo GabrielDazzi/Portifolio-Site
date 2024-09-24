@@ -359,3 +359,14 @@ body.dark-mode .project {
     }
 }
 
+@media (max-width: 368px) {
+
+    #topbar nav a {
+        text-decoration: none;
+        color: #1c5d40;
+        margin: 0 12px;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+    
+}
